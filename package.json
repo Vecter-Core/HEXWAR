@@ -1,0 +1,26 @@
+{
+  "name": "hexwar",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@10.28.0",
+  "engines": {
+    "node": ">=22.12"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "typecheck": "pnpm -r --if-present typecheck",
+    "test": "pnpm -r --if-present test",
+    "build": "pnpm -r --if-present build",
+    "verify:board": "python3 tools/verify_board.py",
+    "golden:gen": "python3 tools/gen_golden.py",
+    "check": "pnpm lint && pnpm typecheck && pnpm test && pnpm verify:board"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.0",
+    "@types/node": "^22.0.0",
+    "eslint": "^10.11.0",
+    "typescript": "5.9.3",
+    "typescript-eslint": "^8.70.1"
+  }
+}
